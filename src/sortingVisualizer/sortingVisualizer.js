@@ -91,92 +91,15 @@ const SortingVisualizer=()=>{
 	}
 
 	const quickSort=()=>{
-		const [animations,tempArray]=Algos.quickSort([...array]);
-		setButtonState(true);
-		setTimeout(()=>{
-			setButtonState(false);
-			setTempArray(tempArray);
-		},animations.length*speedRef[speed]+200);
-		const arrayBars=document.getElementsByClassName(classes.ArrayBar);
-		for(let i=0;i<animations.length;i++){
-			const type=animations[i][0];
-			const barOneStyle=arrayBars[animations[i][1]].style;
-			const barTwoStyle=arrayBars[animations[i][2]].style;
-			if(type==='c' || type==='c1'){
-				const color=type==='c'?'green': 'white';
-				setTimeout(()=>{
-					barOneStyle.backgroundColor=color;
-					barTwoStyle.backgroundColor=color;
-				},i*speedRef[speed])
-			} else {
-				setTimeout(()=>{
-					const newOneStyle=animations[i][4];
-					const newTwoStyle=animations[i][3];
-					barOneStyle.height=`${newOneStyle}px`;
-					barTwoStyle.height=`${newTwoStyle}px`;
-				},i*speedRef[speed])
-			}
-		}
+		
 	}
 
 	const heapSort=()=>{
-		const [animations,tempArray]=Algos.heapSort([...array]);
-		console.log(animations[0][0]);
-		setButtonState(true);
-		setTimeout(()=>{
-			setButtonState(false);
-			setTempArray(tempArray);
-		},animations.length*speedRef[speed]+200);
-		const arrayBars=document.getElementsByClassName(classes.ArrayBar);
-		for(let i=0;i<animations.length;++i){
-			const type=animations[i][0];
-			const barOneStyle=arrayBars[animations[i][1]].style;
-			const barTwoStyle=arrayBars[animations[i][2]].style;
-			if(type==='s'){
-				setTimeout(()=>{
-					const newOneStyle=animations[i][3];
-					const newTwoStyle=animations[i][4];
-					barOneStyle.height=`${newOneStyle}px`;
-					barTwoStyle.height=`${newTwoStyle}px`;
-				},i*speedRef[speed])
-			}
-			else{
-				const color=type==='c'?'green': 'white';
-				setTimeout(()=>{
-					barOneStyle.backgroundColor=color;
-					barTwoStyle.backgroundColor=color;
-				},i*speedRef[speed])
-			}
-		}
+	
 	}
 
 	const insertionSort=()=>{
-		const [animations,tempArray]=Algos.insertionSort([...array]);
-		console.log(animations);
-		setButtonState(true);
-		setTimeout(()=>{
-			setButtonState(false);
-			setTempArray(tempArray);
-		},animations.length*speedRef[speed]+200);
-		const arrayBars=document.getElementsByClassName(classes.ArrayBar);
-		for(let i=0;i<animations.length;i++){
-			const type=animations[i][0];
-			if(type==='c' || type==='c1'){
-				const barOneStyle=arrayBars[animations[i][1]].style;
-				const barTwoStyle=arrayBars[animations[i][2]].style;
-				const color=type==='c'?'green': 'white';
-				setTimeout(()=>{
-					barOneStyle.backgroundColor=color;
-					barTwoStyle.backgroundColor=color;
-				},i*speedRef[speed])
-			} else {
-				setTimeout(()=>{
-					const barOneStyle=arrayBars[animations[i][1]].style;
-					const newHeight=animations[i][2];
-					barOneStyle.height=`${newHeight}px`;
-				},i*speedRef[speed])
-			}
-		}
+		
 	}
 
 	let buttonClasses=[classes.ButtonContain];
