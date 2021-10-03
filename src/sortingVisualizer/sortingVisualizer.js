@@ -25,7 +25,7 @@ const SortingVisualizer=()=>{
 	const [array,setArray]=useState([]);
 	const [disableButton,setDisable]=useState(false);
 	const [speed,setSpeed]=useState('Normal');
-	const [size,setSize]=useState('Small');
+	const [size,setSize]=useState('Normal');
 
 	const resetArray=useCallback(()=>{
 		const temp=[];
@@ -189,7 +189,7 @@ const SortingVisualizer=()=>{
 		<h1> Sorting Algorithm Visualizer </h1>
 		<div className={buttonClasses.join(' ')}>
 			<button disabled={disableButton} onClick={()=>resetArray()}>Generate New Array</button>
-			{/*<Dropdown
+			<Dropdown
 				name={'Array Size'}
 				list={['Small','Normal','Large']}
 				clicked={handleSize}
@@ -200,7 +200,7 @@ const SortingVisualizer=()=>{
 				list={['Slow','Normal','Fast']}
 				clicked={handleSpeed}
 				selected={speed}
-			/>*/}
+			/>
 			<div className={classes.Sorts}>
 				<button disabled={disableButton} onClick={()=>mergeSort()}>Merge Sort</button>
 				<button disabled={disableButton} onClick={()=>quickSort()}>Quick Sort</button>
