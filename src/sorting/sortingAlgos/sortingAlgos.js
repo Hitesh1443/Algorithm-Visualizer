@@ -33,32 +33,33 @@ const doMerge=(
 	let j=middleIdx+1;
 	while(i<=middleIdx && j<=endIdx){
 		//We push the indexes we are comparing, to change their color
-		animations.push([i,j]);
+		animations.push(['c',i,j]);
 		//We push it again to revert their color
-		animations.push([i,j]);
 
 		if(auxiliaryArray[i]<=auxiliaryArray[j]){
 			//We overwrite the value at index k in original array 
 			// with value at index i in auxiliaryArray
-			animations.push([k,auxiliaryArray[i]]);
+			animations.push(['o',k,auxiliaryArray[i]]);
+			animations.push(['c1',i,j]);
 			mainArray[k++]=auxiliaryArray[i++];
 		} else {
 			//We overwrite the value at index k in original array 
 			// with value at index j in auxiliaryArray
-			animations.push([k,auxiliaryArray[j]]);
+			animations.push(['o',k,auxiliaryArray[j]]);
+			animations.push(['c1',i,j]);
 			mainArray[k++]=auxiliaryArray[j++];
 		}
 	}
 	while(i<=middleIdx){
-		animations.push([i,i]);
-		animations.push([i,i]);
-		animations.push([k,auxiliaryArray[i]]);
+		animations.push(['c',i,i]);
+		animations.push(['o',k,auxiliaryArray[i]]);
+		animations.push(['c1',i,i]);
 		mainArray[k++]=auxiliaryArray[i++];
 	}
 	while(j<=endIdx){
-		animations.push([j,j]);
-		animations.push([j,j]);
-		animations.push([k,auxiliaryArray[j]]);
+		animations.push(['c',j,j]);
+		animations.push(['o',k,auxiliaryArray[j]]);
+		animations.push(['c1',j,j]);
 		mainArray[k++]=auxiliaryArray[j++];
 	}
 }
@@ -90,13 +91,13 @@ const partition=(mainArray,startIdx,endIdx,animations)=>{
 		// //We push the indexes we are comparing, to change their color
 		animations.push(['c',i,endIdx]);
 		//We push push it again to revert their color
-		animations.push(['c1',i,endIdx]);
 		if(mainArray[i]<=pivot){
 			// we push the swap condition with indexes and heights
 			animations.push(['s',i,pIndex,mainArray[i],mainArray[pIndex]]);
 			[mainArray[i],mainArray[pIndex]]=[mainArray[pIndex],mainArray[i]];
 			pIndex++;
 		}
+		animations.push(['c1',i,endIdx]);
 	}
 	animations.push(['s',pIndex,endIdx,mainArray[pIndex],mainArray[endIdx]]);
 	[mainArray[pIndex],mainArray[endIdx]]=[mainArray[endIdx],mainArray[pIndex]];
@@ -110,8 +111,8 @@ export const insertionSort=(array)=>{
 		let hole=i;
 		while(hole>0 && array[hole-1]>value){
 			animations.push(['c',hole,i]);
-			animations.push(['c1',hole,i]);
 			animations.push(['o',hole,array[hole-1]]);
+			animations.push(['c1',hole,i]);
 			array[hole]=array[hole-1];
 			hole--;
 		}

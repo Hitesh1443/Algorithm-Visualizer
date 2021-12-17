@@ -1,0 +1,30 @@
+.Grid {
+  display: flex;
+  width: 1130px;
+  margin: auto;
+  justify-content: center;
+}
+.Functions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Functions h2 {
+  color: white;
+}
+.Functions button {
+  padding: 0.2rem 0.3rem;
+  background-color: white;
+  border: 2px #990033 solid;
+  color: #990033;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index: 200;
+}

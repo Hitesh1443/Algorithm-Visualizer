@@ -13,8 +13,8 @@ const Dropdown=(props)=>{
 						key={ele}
 						onClick={()=>props.clicked(ele)}
 						style={{
-							backgroundColor:props.selected===ele?'black':'white',
-							color:props.selected===ele?'white':'black'
+							backgroundColor:props.selected===ele?'#ff3399':'white',
+							color:props.selected===ele?'white':'#ff3399'
 						}}>{ele}</li>
 				})}
 			</ul>

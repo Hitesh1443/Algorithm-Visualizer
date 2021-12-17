@@ -1,0 +1,10 @@
+.Header {
+  text-align: center;
+}
+.Header h1 {
+  font-family: "Josefin Sans", sans-serif;
+  display: inline-block;
+  cursor: pointer;
+  margin:10px;
+  color: white;
+}

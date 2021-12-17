@@ -1,0 +1,68 @@
+.Node{
+	width:22px;
+	height:22px;
+	border:1px #8585ad solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+}
+.node-visited-stay{
+	background-color: #ff4d88;
+	border:1px #990033 solid;
+}
+.node-shortestPath-stay{
+	background-color: #990066;
+}
+.node-visited{
+	animation-name: visitedAnimation;
+	animation-duration: 1.2s;
+	animation-delay: 0;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+@keyframes visitedAnimation{
+	0%{
+		transform:scale(0.3);
+		background-color:#80002a;
+		border-radius:100%;
+	}
+	25%{
+		background-color:#990033;
+	}
+	50%{
+		background-color: #b3003b;
+	}
+	75%{
+		transform:scale(1.2);
+		background-color: #e6004c;
+	}
+	100%{
+		transform:scale(1);
+		background-color: #ff4d88;
+		border:1px #990033 solid;
+	}
+}
+.node-wall{
+	background-color: #262626;
+}
+.node-shortestPath{
+	background-color: #990066 !important;
+}
+.nodeFinish{
+	background-color:#a366ff !important;
+	//box-sizing: border-box;
+	//border:4px #a366ff solid !important;
+	//margin-bottom:0.08rem;
+	cursor:pointer;
+}
+.nodeStart{
+	background-color:#00cc99 !important;
+	//margin-bottom:0.08rem;
+	//box-sizing: border-box;
+	//border:4px #009973 solid !important;
+	cursor: pointer;
+}

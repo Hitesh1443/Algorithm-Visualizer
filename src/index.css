@@ -6,6 +6,7 @@ body {
 }
 ul{
 	list-style: none;
+  padding: 0;
 }
 ul,li,button,a{
 	outline: none
